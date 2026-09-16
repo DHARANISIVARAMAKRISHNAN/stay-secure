@@ -103,15 +103,11 @@
     display:flex;justify-content:center;
   }
   .phone-frame{
-    width:230px;border-radius:34px;
-    background:#1c1c1c;padding:10px;
-    box-shadow:var(--shadow);
+    width:250px;
+    filter:drop-shadow(0 20px 40px rgba(78,16,48,0.28));
     transform:rotate(-3deg);
   }
-  .phone-frame img{border-radius:24px;}
-  .phone-frame::after{
-    content:"";position:absolute;
-  }
+  .phone-frame img{border-radius:14px;}
 
   /* ---------- SECTION SHARED ---------- */
   section{padding:64px 0;}
@@ -167,10 +163,9 @@
     width:172px;text-align:center;
   }
   .gitem .frame{
-    background:#111;border-radius:22px;padding:7px;
-    box-shadow:0 16px 34px rgba(0,0,0,0.35);
+    filter:drop-shadow(0 14px 28px rgba(0,0,0,0.35));
   }
-  .gitem .frame img{border-radius:16px;}
+  .gitem .frame img{border-radius:10px;}
   .gitem .cap{
     margin-top:12px;font-size:0.82rem;color:#f3d9e2;
   }
