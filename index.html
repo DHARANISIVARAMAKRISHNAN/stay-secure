@@ -164,10 +164,40 @@
   }
   .gitem .frame{
     filter:drop-shadow(0 14px 28px rgba(0,0,0,0.35));
+    border-radius:14px;
+    transition:transform .28s cubic-bezier(.22,1,.36,1), filter .28s ease;
+    cursor:pointer;
   }
-  .gitem .frame img{border-radius:10px;}
+  .gitem .frame img{
+    border-radius:10px;
+    display:block;
+    outline:2px solid transparent;
+    outline-offset:4px;
+    transition:outline-color .28s ease;
+  }
+  .gitem:hover .frame,
+  .gitem:focus-within .frame,
+  .gitem.is-active .frame{
+    transform:translateY(-8px) scale(1.05);
+    filter:drop-shadow(0 22px 38px rgba(0,0,0,0.45));
+  }
+  .gitem:hover .frame img,
+  .gitem:focus-within .frame img,
+  .gitem.is-active .frame img{
+    outline-color:var(--gold);
+  }
+  .gitem .frame:active{
+    transform:translateY(-4px) scale(0.98);
+    transition-duration:.1s;
+  }
   .gitem .cap{
     margin-top:12px;font-size:0.82rem;color:#f3d9e2;
+    transition:color .28s ease;
+  }
+  .gitem:hover .cap,
+  .gitem:focus-within .cap,
+  .gitem.is-active .cap{
+    color:#fff;
   }
 
   /* ---------- TECH STACK ---------- */
