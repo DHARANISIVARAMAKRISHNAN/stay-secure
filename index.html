@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stay Secure — Women's Safety App | Dharani S</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #241019;
+    --ink-soft: #5c3a49;
+    --berry: #7a1f4b;
+    --berry-deep: #4e1030;
+    --rose: #c9184a;
+    --blush: #fbe7ed;
+    --blush-deep: #f6d3df;
+    --cream: #fff8f6;
+    --gold: #c9a15a;
+    --line: rgba(122,31,75,0.16);
+    --shadow: 0 20px 45px rgba(78,16,48,0.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:40;
+    background:rgba(255,248,246,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:16px;padding-bottom:16px;
+  }
+  .brand{font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;letter-spacing:0.01em;text-decoration:none;color:var(--berry-deep);}
+  .navlinks{display:flex;gap:28px;font-size:0.92rem;font-weight:500;}
+  .navlinks a{text-decoration:none;color:var(--ink-soft);border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .2s;}
+  .navlinks a:hover{border-color:var(--rose);}
+  @media (max-width:640px){.navlinks{display:none;}}
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    position:relative;
+    overflow:hidden;
+    padding:88px 0 72px;
+    background:
+      radial-gradient(680px 420px at 82% -10%, var(--blush-deep) 0%, transparent 60%),
+      linear-gradient(180deg, var(--cream) 0%, var(--cream) 100%);
+  }
+  .hero .wrap{display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:center;}
+  @media (max-width:860px){.hero .wrap{grid-template-columns:1fr;}}
+
+  .eyebrow-tag{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:0.82rem;color:var(--berry);
+    background:var(--blush);border:1px solid var(--line);
+    padding:6px 14px;border-radius:99px;margin-bottom:22px;
+  }
+  .eyebrow-tag span.dot{width:6px;height:6px;border-radius:50%;background:#3fae5c;display:inline-block;}
+
+  h1.title{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:clamp(2.4rem, 5vw, 3.4rem);
+    line-height:1.06;
+    margin:0 0 22px;
+    color:var(--berry-deep);
+  }
+  .hero p.lede{
+    font-size:1.08rem;
+    color:var(--ink-soft);
+    max-width:46ch;
+    margin:0 0 30px;
+  }
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:13px 26px;border-radius:10px;
+    font-weight:600;font-size:0.95rem;text-decoration:none;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary{background:var(--berry-deep);color:#fff8f6;box-shadow:0 10px 24px rgba(78,16,48,0.28);}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{background:transparent;color:var(--berry-deep);border:1.5px solid var(--berry-deep);}
+  .btn-ghost:hover{background:var(--blush);}
+
+  .hero-phone{
+    position:relative;
+    display:flex;justify-content:center;
+  }
+  .phone-frame{
+    width:230px;border-radius:34px;
+    background:#1c1c1c;padding:10px;
+    box-shadow:var(--shadow);
+    transform:rotate(-3deg);
+  }
+  .phone-frame img{border-radius:24px;}
+  .phone-frame::after{
+    content:"";position:absolute;
+  }
+
+  /* ---------- SECTION SHARED ---------- */
+  section{padding:64px 0;}
+  .section-head{max-width:56ch;margin-bottom:38px;}
+  .section-label{
+    font-size:0.8rem;font-weight:600;color:var(--rose);
+    margin:0 0 10px;
+  }
+  h2.section-title{
+    font-family:'Fraunces',serif;font-weight:600;
+    font-size:clamp(1.6rem,3vw,2.15rem);
+    margin:0 0 14px;color:var(--berry-deep);
+  }
+  .section-body{color:var(--ink-soft);font-size:1rem;}
+
+  /* ---------- FEATURES ---------- */
+  .feature-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+  }
+  @media (max-width:760px){.feature-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:520px){.feature-grid{grid-template-columns:1fr;}}
+  .feature-card{
+    background:var(--blush);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:24px 22px;
+  }
+  .feature-card .ficon{
+    width:40px;height:40px;border-radius:10px;
+    background:var(--berry-deep);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.05rem;margin-bottom:16px;
+  }
+  .feature-card h3{
+    font-size:1.02rem;margin:0 0 8px;color:var(--berry-deep);font-weight:600;
+  }
+  .feature-card p{margin:0;font-size:0.92rem;color:var(--ink-soft);}
+
+  /* ---------- GALLERY ---------- */
+  .gallery-section{background:var(--berry-deep);color:var(--blush);}
+  .gallery-section .section-label{color:var(--gold);}
+  .gallery-section h2.section-title{color:#fff8f6;}
+  .gallery-section .section-body{color:#e9c9d6;}
+  .gallery-strip{
+    display:flex;gap:20px;overflow-x:auto;padding:30px 0 12px;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+  }
+  .gallery-strip::-webkit-scrollbar{height:8px;}
+  .gallery-strip::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.25);border-radius:99px;}
+  .gitem{
+    flex:0 0 auto;scroll-snap-align:start;
+    width:172px;text-align:center;
+  }
+  .gitem .frame{
+    background:#111;border-radius:22px;padding:7px;
+    box-shadow:0 16px 34px rgba(0,0,0,0.35);
+  }
+  .gitem .frame img{border-radius:16px;}
+  .gitem .cap{
+    margin-top:12px;font-size:0.82rem;color:#f3d9e2;
+  }
+
+  /* ---------- TECH STACK ---------- */
+  .stack-row{
+    display:flex;flex-wrap:wrap;gap:12px;
+  }
+  .chip{
+    background:var(--cream);
+    border:1px solid var(--line);
+    padding:9px 18px;border-radius:99px;
+    font-size:0.88rem;font-weight:500;color:var(--berry-deep);
+  }
+
+  /* ---------- RESEARCH ---------- */
+  .research-card{
+    border:1px solid var(--line);
+    border-left:4px solid var(--rose);
+    background:var(--blush);
+    border-radius:14px;
+    padding:26px 28px;
+  }
+  .research-card p{margin:0 0 6px;font-size:0.95rem;color:var(--ink-soft);}
+  .research-card .meta{font-size:0.85rem;color:var(--berry);font-weight:500;}
+
+  /* ---------- LINKS FOOTER ---------- */
+  footer{
+    padding:50px 0 60px;
+    border-top:1px solid var(--line);
+  }
+  .foot-row{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+  }
+  footer .brand-line{font-family:'Fraunces',serif;color:var(--berry-deep);font-weight:600;}
+  footer .foot-links{display:flex;gap:22px;font-size:0.9rem;}
+  footer .foot-links a{text-decoration:none;color:var(--ink-soft);}
+  footer .foot-links a:hover{color:var(--rose);}
+  footer .copy{font-size:0.8rem;color:#9b7686;margin-top:26px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Stay Secure</a>
+    <div class="navlinks">
+      <a href="#features">Features</a>
+      <a href="#screens">Screens</a>
+      <a href="#stack">Tech</a>
+      <a href="#research">Research</a>
+      <a href="https://github.com/DHARANISIVARAMAKRISHNAN/stay-secure" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow-tag"><span class="dot"></span>Final-year project, rebuilt for production</span>
+      <h1 class="title">A safety app that stays one tap away from help.</h1>
+      <p class="lede">Stay Secure is an Android app that gives women instant access to emergency contacts, one-tap SOS alerts, live location sharing, and a plain-language guide to their legal rights — built with Flutter, PHP, and MySQL.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/DHARANISIVARAMAKRISHNAN/stay-secure" target="_blank" rel="noopener">View source on GitHub</a>
+        <a class="btn btn-ghost" href="#screens">See the app</a>
+      </div>
+    </div>
+    <div class="hero-phone">
+      <div class="phone-frame">
+        <img src="screenshots/01-home-safe.png" alt="Stay Secure home screen showing SAFE status">
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-label">What it does</p>
+      <h2 class="section-title">Built around the moments that matter most</h2>
+      <p class="section-body">Every screen answers one question: how fast can a person in distress get help, and how easily can the people around them find out?</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="ficon">✓</div>
+        <h3>Status at a glance</h3>
+        <p>A single SAFE indicator on the home screen, so the user's own status is never more than a glance away.</p>
+      </div>
+      <div class="feature-card">
+        <div class="ficon">⚠</div>
+        <h3>SOS features</h3>
+        <p>Live location sharing, a safe-route suggestion, quick camera access, and background video recording, all from one panel.</p>
+      </div>
+      <div class="feature-card">
+        <div class="ficon">☎</div>
+        <h3>Emergency contacts</h3>
+        <p>Police, Women's Helpline, Child Helpline, and Ambulance numbers pre-loaded, plus two personal emergency contacts per user.</p>
+      </div>
+      <div class="feature-card">
+        <div class="ficon">⚖</div>
+        <h3>Know your rights</h3>
+        <p>A plain-language summary of key Indian laws for women's safety — IPC sections explained without legal jargon.</p>
+      </div>
+      <div class="feature-card">
+        <div class="ficon">🛡</div>
+        <h3>Self-defense guide</h3>
+        <p>Practical guidance a user can review ahead of time, not something they have to search for in the moment.</p>
+      </div>
+      <div class="feature-card">
+        <div class="ficon">👤</div>
+        <h3>Simple profile & auth</h3>
+        <p>Straightforward registration and login backed by a PHP + MySQL API, with a clean profile view of saved details.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-section" id="screens">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-label">Walkthrough</p>
+      <h2 class="section-title">Every screen, in order</h2>
+      <p class="section-body">Scroll through the actual app — from first launch to registering, logging in, and reaching the SOS panel.</p>
+    </div>
+    <div class="gallery-strip">
+      <div class="gitem">
+        <div class="frame"><img src="screenshots/01-home-safe.png" alt="Home screen, SAFE status"></div>
+        <p class="cap">Home — status</p>
+      </div>
+      <div class="gitem">
+        <div class="frame"><img src="screenshots/03-login.png" alt="Login screen"></div>
+        <p class="cap">Login</p>
+      </div>
+      <div class="gitem">
+        <div class="frame"><img src="screenshots/02-register-1.png" alt="Registration form part one"></div>
+        <p class="cap">Register — details</p>
+      </div>
+      <div class="gitem">
+        <div class="frame"><img src="screenshots/08-register-2.png" alt="Registration form part two with emergency contacts"></div>
+        <p class="cap">Register — contacts</p>
+      </div>
+      <div class="gitem">
+        <div class="frame"><img src="screenshots/04-menu-drawer.png" alt="Navigation drawer menu"></div>
+        <p class="cap">Menu</p>
+      </div>
+      <div class="gitem">
+        <div class="frame"><img src="screenshots/05-profile.png" alt="User profile screen"></div>
+        <p class="cap">Profile</p>
+      </div>
+      <div class="gitem">
+        <div class="frame"><img src="screenshots/06-emergency-contacts.png" alt="Emergency contacts list"></div>
+        <p class="cap">Emergency contacts</p>
+      </div>
+      <div class="gitem">
+        <div class="frame"><img src="screenshots/07-women-laws.png" alt="Women's safety laws reference screen"></div>
+        <p class="cap">Know your rights</p>
+      </div>
+      <div class="gitem">
+        <div class="frame"><img src="screenshots/09-sos-features.png" alt="SOS features panel"></div>
+        <p class="cap">SOS panel</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-label">Under the hood</p>
+      <h2 class="section-title">Tech stack</h2>
+    </div>
+    <div class="stack-row">
+      <span class="chip">Flutter / Dart</span>
+      <span class="chip">PHP REST APIs</span>
+      <span class="chip">MySQL</span>
+      <span class="chip">geolocator</span>
+      <span class="chip">url_launcher</span>
+      <span class="chip">shared_preferences</span>
+      <span class="chip">permission_handler</span>
+      <span class="chip">XAMPP</span>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-label">Published work</p>
+      <h2 class="section-title">This project is backed by a research paper</h2>
+    </div>
+    <div class="research-card">
+      <p>Stay Secure was documented as a peer-reviewed research paper, covering the app's design rationale and its approach to women's safety technology.</p>
+      <p class="meta">Journal of Multidisciplinary Research & Review (JMRR) · ISSN 2708-9452 · Volume 6, Issue 2 · April 2025</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <span class="brand-line">Stay Secure</span>
+      <div class="foot-links">
+        <a href="https://github.com/DHARANISIVARAMAKRISHNAN/stay-secure" target="_blank" rel="noopener">GitHub Repo</a>
+        <a href="index.html">← Back to Portfolio</a>
+      </div>
+    </div>
+    <p class="copy">Built by Dharani S — Flutter & Android Developer.</p>
+  </div>
+</footer>
+
+</body>
+</html>
