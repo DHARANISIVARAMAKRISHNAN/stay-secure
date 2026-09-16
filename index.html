@@ -12,960 +12,1352 @@
 
 <style>
 :root{
- --p50:#fff5f8;--p100:#ffe7ef;--p200:#ffcbdc;--p300:#f99fbd;
- --p400:#ee6f9b;--p500:#df4779;--p600:#c92f63;--p700:#a8204f;
- --p800:#7d193d;--p900:#54132d;--text:#28131c;--soft:#6d4b59;
- --border:rgba(201,47,99,.14);
- --shadow:0 18px 45px rgba(125,25,61,.13);
+--p50:#fff5f8;
+--p100:#ffe7ef;
+--p200:#ffcbdc;
+--p300:#f99fbd;
+--p400:#ee6f9b;
+--p500:#df4779;
+--p600:#c92f63;
+--p700:#a8204f;
+--p800:#7d193d;
+--p900:#54132d;
+--text:#28131c;
+--soft:#6d4b59;
+--border:rgba(201,47,99,.14);
+--shadow:0 20px 50px rgba(125,25,61,.15);
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
 
-html{scroll-behavior:smooth}
+html{
+scroll-behavior:smooth;
+}
 
 body{
- font-family:"DM Sans",sans-serif;
- background:var(--p50);
- color:var(--text);
- line-height:1.6;
- -webkit-font-smoothing:antialiased;
+font-family:"DM Sans",sans-serif;
+background:var(--p50);
+color:var(--text);
+line-height:1.6;
 }
 
-img{max-width:100%;display:block}
+img{
+max-width:100%;
+display:block;
+}
 
-a{color:inherit}
+a{
+color:inherit;
+}
 
-button{font:inherit}
+button{
+font-family:inherit;
+}
 
 .wrap{
- width:min(1120px,calc(100% - 40px));
- margin:auto;
+width:min(1120px,calc(100% - 40px));
+margin:auto;
 }
 
-section{padding:90px 0}
+section{
+padding:90px 0;
+}
 
 .section-head{
- max-width:680px;
- margin-bottom:45px;
+max-width:680px;
+margin-bottom:45px;
 }
 
 .section-label{
- color:var(--p600);
- text-transform:uppercase;
- letter-spacing:.14em;
- font-size:.76rem;
- font-weight:700;
- margin-bottom:10px;
+color:var(--p600);
+text-transform:uppercase;
+letter-spacing:.14em;
+font-size:.76rem;
+font-weight:700;
+margin-bottom:10px;
 }
 
 .section-title{
- font-family:"Playfair Display",serif;
- color:var(--p900);
- font-size:clamp(2rem,4vw,3rem);
- line-height:1.15;
- margin-bottom:15px;
+font-family:"Playfair Display",serif;
+color:var(--p900);
+font-size:clamp(2rem,4vw,3rem);
+line-height:1.15;
+margin-bottom:15px;
 }
 
 .section-body{
- color:var(--soft);
- font-size:1rem;
+color:var(--soft);
 }
 
 /* NAV */
 
 nav{
- position:sticky;
- top:0;
- z-index:1000;
- background:rgba(255,245,248,.92);
- backdrop-filter:blur(14px);
- border-bottom:1px solid var(--border);
+position:sticky;
+top:0;
+z-index:1000;
+background:rgba(255,245,248,.92);
+backdrop-filter:blur(14px);
+border-bottom:1px solid var(--border);
 }
 
 nav .wrap{
- min-height:72px;
- display:flex;
- align-items:center;
- justify-content:space-between;
+min-height:72px;
+display:flex;
+align-items:center;
+justify-content:space-between;
 }
 
 .brand{
- text-decoration:none;
- font-family:"Playfair Display",serif;
- font-size:1.35rem;
- font-weight:700;
- color:var(--p800);
+text-decoration:none;
+font-family:"Playfair Display",serif;
+font-size:1.35rem;
+font-weight:700;
+color:var(--p800);
 }
 
 .navlinks{
- display:flex;
- gap:28px;
+display:flex;
+gap:28px;
 }
 
 .navlinks a{
- text-decoration:none;
- color:var(--soft);
- font-size:.9rem;
- font-weight:600;
- transition:.25s;
+text-decoration:none;
+color:var(--soft);
+font-size:.9rem;
+font-weight:600;
+transition:.25s;
 }
 
-.navlinks a:hover{color:var(--p600)}
+.navlinks a:hover{
+color:var(--p600);
+}
 
 /* HERO */
 
 .hero{
- position:relative;
- overflow:hidden;
- padding:105px 0 95px;
- background:
- radial-gradient(circle at 85% 10%,rgba(249,159,189,.38),transparent 34%),
- radial-gradient(circle at 10% 90%,rgba(238,111,155,.13),transparent 30%),
- var(--p50);
+position:relative;
+overflow:hidden;
+padding:105px 0 95px;
+background:
+radial-gradient(circle at 85% 10%,rgba(249,159,189,.38),transparent 34%),
+radial-gradient(circle at 10% 90%,rgba(238,111,155,.13),transparent 30%),
+var(--p50);
 }
 
 .hero .wrap{
- display:grid;
- grid-template-columns:1.1fr .9fr;
- align-items:center;
- gap:80px;
+display:grid;
+grid-template-columns:1.1fr .9fr;
+align-items:center;
+gap:80px;
 }
 
 .eyebrow-tag{
- display:inline-flex;
- align-items:center;
- gap:9px;
- padding:8px 15px;
- background:var(--p100);
- border:1px solid var(--p200);
- border-radius:999px;
- color:var(--p700);
- font-size:.8rem;
- font-weight:700;
- margin-bottom:24px;
+display:inline-flex;
+align-items:center;
+gap:9px;
+padding:8px 15px;
+background:var(--p100);
+border:1px solid var(--p200);
+border-radius:999px;
+color:var(--p700);
+font-size:.8rem;
+font-weight:700;
+margin-bottom:24px;
 }
 
 .dot{
- width:7px;
- height:7px;
- background:var(--p500);
- border-radius:50%;
+width:7px;
+height:7px;
+background:var(--p500);
+border-radius:50%;
 }
 
 .hero h1{
- font-family:"Playfair Display",serif;
- color:var(--p900);
- font-size:clamp(2.8rem,6vw,4.7rem);
- line-height:1.05;
- margin-bottom:24px;
+font-family:"Playfair Display",serif;
+color:var(--p900);
+font-size:clamp(2.8rem,6vw,4.7rem);
+line-height:1.05;
+margin-bottom:24px;
 }
 
 .lede{
- max-width:600px;
- color:var(--soft);
- font-size:1.08rem;
- margin-bottom:32px;
+max-width:600px;
+color:var(--soft);
+font-size:1.08rem;
+margin-bottom:32px;
 }
 
 .hero-actions{
- display:flex;
- flex-wrap:wrap;
- gap:14px;
+display:flex;
+flex-wrap:wrap;
+gap:14px;
 }
 
 .btn{
- display:inline-flex;
- align-items:center;
- justify-content:center;
- padding:14px 24px;
- border-radius:12px;
- text-decoration:none;
- font-weight:700;
- font-size:.92rem;
- transition:.3s;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:14px 24px;
+border-radius:12px;
+text-decoration:none;
+font-weight:700;
+font-size:.92rem;
+transition:.3s;
 }
 
 .btn-primary{
- background:linear-gradient(135deg,var(--p700),var(--p500));
- color:white;
- box-shadow:0 12px 30px rgba(201,47,99,.25);
-}
-
-.btn-primary:hover,
-.btn-ghost:hover{
- transform:translateY(-3px);
+background:linear-gradient(135deg,var(--p700),var(--p500));
+color:white;
+box-shadow:0 12px 30px rgba(201,47,99,.25);
 }
 
 .btn-ghost{
- border:1.5px solid var(--p600);
- color:var(--p700);
- background:rgba(255,255,255,.5);
+border:1.5px solid var(--p600);
+color:var(--p700);
+background:white;
 }
 
+.btn:hover{
+transform:translateY(-3px);
+}
+
+/* HERO PHONE */
+
 .hero-phone{
- display:flex;
- justify-content:center;
- animation:float 4s ease-in-out infinite;
+display:flex;
+justify-content:center;
+animation:float 4s ease-in-out infinite;
 }
 
 .phone-frame{
- width:min(290px,80%);
- padding:8px;
- background:#160c11;
- border-radius:35px;
- box-shadow:0 30px 70px rgba(125,25,61,.2);
- transform:rotate(3deg);
- transition:.4s;
+width:min(290px,80%);
+padding:8px;
+background:#160c11;
+border-radius:35px;
+box-shadow:0 30px 70px rgba(125,25,61,.22);
+transform:rotate(3deg);
+transition:.4s;
 }
 
 .phone-frame:hover{
- transform:rotate(0) translateY(-8px);
+transform:rotate(0) translateY(-8px);
 }
 
 .phone-frame img{
- border-radius:28px;
+border-radius:28px;
 }
 
 /* FEATURES */
 
-#features{background:white}
+#features{
+background:white;
+}
 
 .feature-grid{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:22px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px;
 }
 
 .feature-card{
- padding:30px 26px;
- border-radius:20px;
- background:linear-gradient(145deg,#fff,var(--p50));
- border:1px solid var(--border);
- box-shadow:0 8px 25px rgba(125,25,61,.08);
- transition:.35s;
+padding:30px 26px;
+border-radius:20px;
+background:linear-gradient(145deg,#fff,var(--p50));
+border:1px solid var(--border);
+box-shadow:0 8px 25px rgba(125,25,61,.08);
+transition:.35s;
 }
 
 .feature-card:hover{
- transform:translateY(-8px);
- box-shadow:var(--shadow);
- border-color:var(--p300);
+transform:translateY(-8px);
+box-shadow:var(--shadow);
+border-color:var(--p300);
 }
 
 .ficon{
- width:48px;
- height:48px;
- display:grid;
- place-items:center;
- border-radius:14px;
- background:linear-gradient(135deg,var(--p700),var(--p400));
- color:white;
- font-size:.9rem;
- font-weight:700;
- margin-bottom:20px;
+width:48px;
+height:48px;
+display:grid;
+place-items:center;
+border-radius:14px;
+background:linear-gradient(135deg,var(--p700),var(--p400));
+color:white;
+font-size:.9rem;
+font-weight:700;
+margin-bottom:20px;
 }
 
 .feature-card h3{
- color:var(--p900);
- font-size:1.05rem;
- margin-bottom:9px;
+color:var(--p900);
+font-size:1.05rem;
+margin-bottom:9px;
 }
 
 .feature-card p{
- color:var(--soft);
- font-size:.92rem;
+color:var(--soft);
+font-size:.92rem;
 }
 
 /* APP SCREENS */
 
 .gallery-section{
- background:linear-gradient(145deg,var(--p900),var(--p700));
- color:white;
- overflow:hidden;
+background:linear-gradient(145deg,var(--p900),var(--p700));
+color:white;
+overflow:hidden;
 }
 
-.gallery-section .section-label{color:var(--p200)}
-.gallery-section .section-title{color:white}
-.gallery-section .section-body{color:#f9dce7}
+.gallery-section .section-label{
+color:var(--p200);
+}
+
+.gallery-section .section-title{
+color:white;
+}
+
+.gallery-section .section-body{
+color:#f9dce7;
+}
 
 .explorer{
- display:grid;
- grid-template-columns:.8fr 1.2fr;
- gap:70px;
- align-items:center;
+display:grid;
+grid-template-columns:.9fr 1.1fr;
+gap:70px;
+align-items:center;
 }
 
-.screen-stage{
- min-height:560px;
- display:flex;
- align-items:center;
- justify-content:center;
- position:relative;
+/* MOBILE TEMPLATE */
+
+.screen-area{
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:590px;
 }
 
-.screen-stage::before{
- content:"";
- position:absolute;
- width:330px;
- height:330px;
- border-radius:50%;
- background:rgba(255,255,255,.08);
- filter:blur(8px);
- animation:pulse 4s ease-in-out infinite;
+.app-phone{
+width:285px;
+padding:8px;
+background:#12090d;
+border-radius:38px;
+box-shadow:
+0 35px 70px rgba(0,0,0,.38),
+0 0 0 2px rgba(255,255,255,.08);
+position:relative;
+animation:phoneFloat 4s ease-in-out infinite;
 }
 
-.screen-image{
- position:relative;
- width:min(300px,90%);
- max-height:570px;
- object-fit:contain;
- filter:drop-shadow(0 30px 35px rgba(0,0,0,.35));
- animation:screenIn .45s ease;
+.app-phone::before{
+content:"";
+position:absolute;
+top:8px;
+left:50%;
+transform:translateX(-50%);
+width:75px;
+height:18px;
+background:#12090d;
+border-radius:0 0 14px 14px;
+z-index:2;
+}
+
+.app-phone img{
+width:100%;
+border-radius:30px;
+background:white;
+}
+
+.app-phone.profile-mode{
+background:transparent;
+padding:0;
+box-shadow:none;
+}
+
+.app-phone.profile-mode::before{
+display:none;
+}
+
+.app-phone.profile-mode img{
+border-radius:25px;
 }
 
 .screen-info{
- min-height:380px;
- display:flex;
- flex-direction:column;
- justify-content:center;
+min-height:420px;
+display:flex;
+flex-direction:column;
+justify-content:center;
 }
 
 .screen-number{
- color:var(--p200);
- font-size:.8rem;
- font-weight:700;
- letter-spacing:.14em;
- text-transform:uppercase;
- margin-bottom:12px;
+color:var(--p200);
+font-size:.78rem;
+font-weight:700;
+letter-spacing:.14em;
+margin-bottom:12px;
 }
 
 .screen-info h3{
- font-family:"Playfair Display",serif;
- font-size:2.4rem;
- margin-bottom:14px;
+font-family:"Playfair Display",serif;
+font-size:2.45rem;
+line-height:1.15;
+margin-bottom:15px;
 }
 
 .screen-info p{
- color:#f9dce7;
- max-width:500px;
- margin-bottom:22px;
+color:#f9dce7;
+max-width:500px;
+margin-bottom:24px;
 }
 
-.screen-info ul{
- list-style:none;
- display:grid;
- gap:10px;
- margin-bottom:28px;
+.screen-features{
+list-style:none;
+display:grid;
+gap:10px;
+margin-bottom:28px;
 }
 
-.screen-info li{
- color:white;
- padding-left:22px;
- position:relative;
+.screen-features li{
+color:white;
+padding-left:23px;
+position:relative;
 }
 
-.screen-info li::before{
- content:"✓";
- position:absolute;
- left:0;
- color:var(--p200);
- font-weight:700;
+.screen-features li::before{
+content:"✓";
+position:absolute;
+left:0;
+color:var(--p200);
+font-weight:700;
 }
 
 .screen-controls{
- display:flex;
- align-items:center;
- gap:12px;
- margin-bottom:20px;
+display:flex;
+gap:10px;
+margin-bottom:20px;
 }
 
 .control{
- border:1px solid rgba(255,255,255,.2);
- background:rgba(255,255,255,.08);
- color:white;
- width:42px;
- height:42px;
- border-radius:50%;
- cursor:pointer;
- transition:.25s;
+width:42px;
+height:42px;
+border:1px solid rgba(255,255,255,.2);
+background:rgba(255,255,255,.08);
+color:white;
+border-radius:50%;
+cursor:pointer;
+transition:.25s;
 }
 
 .control:hover{
- background:rgba(255,255,255,.18);
- transform:scale(1.08);
+background:white;
+color:var(--p800);
+transform:scale(1.08);
 }
 
 .screen-tabs{
- display:flex;
- flex-wrap:wrap;
- gap:9px;
+display:flex;
+flex-wrap:wrap;
+gap:8px;
 }
 
 .screen-tab{
- border:1px solid rgba(255,255,255,.18);
- background:rgba(255,255,255,.06);
- color:#f9dce7;
- padding:9px 14px;
- border-radius:999px;
- cursor:pointer;
- font-size:.8rem;
- transition:.25s;
+border:1px solid rgba(255,255,255,.18);
+background:rgba(255,255,255,.06);
+color:#f9dce7;
+padding:9px 13px;
+border-radius:999px;
+cursor:pointer;
+font-size:.78rem;
+transition:.25s;
 }
 
 .screen-tab:hover,
 .screen-tab.active{
- background:white;
- color:var(--p800);
- transform:translateY(-2px);
+background:white;
+color:var(--p800);
+transform:translateY(-2px);
 }
 
 /* TECH */
 
-#stack{background:var(--p50)}
+#stack{
+background:var(--p50);
+}
 
 .stack-row{
- display:flex;
- flex-wrap:wrap;
- gap:13px;
+display:flex;
+flex-wrap:wrap;
+gap:13px;
 }
 
 .chip{
- padding:11px 19px;
- border-radius:999px;
- background:white;
- border:1px solid var(--p200);
- color:var(--p800);
- font-size:.88rem;
- font-weight:600;
- box-shadow:0 8px 25px rgba(125,25,61,.08);
- transition:.25s;
+padding:11px 19px;
+border-radius:999px;
+background:white;
+border:1px solid var(--p200);
+color:var(--p800);
+font-size:.88rem;
+font-weight:600;
+box-shadow:0 8px 25px rgba(125,25,61,.08);
+transition:.25s;
 }
 
 .chip:hover{
- background:var(--p100);
- transform:translateY(-3px);
+background:var(--p100);
+transform:translateY(-3px);
 }
 
 /* RESEARCH */
 
-#research{background:white}
+#research{
+background:white;
+}
 
 .research-card{
- position:relative;
- padding:32px;
- background:linear-gradient(135deg,var(--p50),white);
- border:1px solid var(--p200);
- border-radius:20px;
- box-shadow:0 8px 25px rgba(125,25,61,.08);
- overflow:hidden;
+position:relative;
+padding:32px;
+background:linear-gradient(135deg,var(--p50),white);
+border:1px solid var(--p200);
+border-radius:20px;
+box-shadow:0 8px 25px rgba(125,25,61,.08);
+overflow:hidden;
 }
 
 .research-card::before{
- content:"";
- position:absolute;
- inset:0 auto 0 0;
- width:5px;
- background:linear-gradient(var(--p700),var(--p400));
+content:"";
+position:absolute;
+inset:0 auto 0 0;
+width:5px;
+background:linear-gradient(var(--p700),var(--p400));
 }
 
 .research-card p{
- color:var(--soft);
- font-size:.96rem;
- margin-bottom:10px;
+color:var(--soft);
+font-size:.96rem;
+margin-bottom:10px;
 }
 
 .research-card .meta{
- color:var(--p700);
- font-size:.86rem;
- font-weight:700;
- margin:0;
+color:var(--p700);
+font-size:.86rem;
+font-weight:700;
+margin:0;
 }
 
 /* FOOTER */
 
 footer{
- padding:55px 0;
- background:var(--p50);
- border-top:1px solid var(--border);
+padding:55px 0;
+background:var(--p50);
+border-top:1px solid var(--border);
 }
 
 .foot-row{
- display:flex;
- align-items:center;
- justify-content:space-between;
- flex-wrap:wrap;
- gap:20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:20px;
 }
 
 .brand-line{
- font-family:"Playfair Display",serif;
- font-size:1.2rem;
- font-weight:700;
- color:var(--p800);
+font-family:"Playfair Display",serif;
+font-size:1.2rem;
+font-weight:700;
+color:var(--p800);
 }
 
 .foot-links{
- display:flex;
- gap:25px;
+display:flex;
+gap:25px;
 }
 
 .foot-links a{
- text-decoration:none;
- color:var(--soft);
- font-size:.9rem;
- font-weight:600;
+text-decoration:none;
+color:var(--soft);
+font-size:.9rem;
+font-weight:600;
 }
 
-.foot-links a:hover{color:var(--p600)}
+.foot-links a:hover{
+color:var(--p600);
+}
 
 .copy{
- margin-top:25px;
- color:#9b7785;
- font-size:.8rem;
+margin-top:25px;
+color:#9b7785;
+font-size:.8rem;
 }
 
 /* ANIMATIONS */
 
-@keyframes float{
- 0%,100%{transform:translateY(0)}
- 50%{transform:translateY(-12px)}
-}
-
-@keyframes pulse{
- 0%,100%{transform:scale(1);opacity:.7}
- 50%{transform:scale(1.15);opacity:1}
-}
-
-@keyframes screenIn{
- from{opacity:0;transform:translateX(25px) scale(.96)}
- to{opacity:1;transform:translateX(0) scale(1)}
-}
-
 .reveal{
- opacity:0;
- transform:translateY(25px);
- transition:opacity .7s ease,transform .7s ease;
+opacity:0;
+transform:translateY(25px);
+transition:.7s ease;
 }
 
 .reveal.visible{
- opacity:1;
- transform:none;
+opacity:1;
+transform:none;
+}
+
+.screen-animate{
+animation:screenChange .45s ease;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-12px)}
+}
+
+@keyframes phoneFloat{
+0%,100%{transform:translateY(0) rotate(2deg)}
+50%{transform:translateY(-10px) rotate(0)}
+}
+
+@keyframes screenChange{
+from{
+opacity:0;
+transform:translateX(25px) scale(.96);
+}
+to{
+opacity:1;
+transform:translateX(0) scale(1);
+}
 }
 
 /* RESPONSIVE */
 
 @media(max-width:900px){
- .hero .wrap,
- .explorer{
-  grid-template-columns:1fr;
-  text-align:center;
- }
 
- .hero h1,
- .lede{
-  margin-left:auto;
-  margin-right:auto;
- }
+.hero .wrap,
+.explorer{
+grid-template-columns:1fr;
+text-align:center;
+}
 
- .hero-actions{justify-content:center}
+.hero h1,
+.lede{
+margin-left:auto;
+margin-right:auto;
+}
 
- .feature-grid{
-  grid-template-columns:repeat(2,1fr);
- }
+.hero-actions{
+justify-content:center;
+}
 
- .screen-info{
-  text-align:center;
-  align-items:center;
- }
+.feature-grid{
+grid-template-columns:repeat(2,1fr);
+}
 
- .screen-info p{margin-left:auto;margin-right:auto}
+.screen-info{
+align-items:center;
+}
 
- .screen-stage{min-height:500px}
+.screen-info p{
+margin-left:auto;
+margin-right:auto;
+}
+
+.screen-area{
+min-height:520px;
+}
 }
 
 @media(max-width:600px){
- .wrap{width:calc(100% - 28px)}
- section{padding:70px 0}
 
- .hero{padding:75px 0 70px}
- .hero h1{font-size:2.7rem}
+.wrap{
+width:calc(100% - 28px);
+}
 
- .navlinks{display:none}
+section{
+padding:70px 0;
+}
 
- .feature-grid{grid-template-columns:1fr}
+.hero{
+padding:75px 0 70px;
+}
 
- .explorer{gap:20px}
+.hero h1{
+font-size:2.7rem;
+}
 
- .screen-stage{
-  min-height:430px;
- }
+.navlinks{
+display:none;
+}
 
- .screen-image{
-  width:240px;
-  max-height:430px;
- }
+.feature-grid{
+grid-template-columns:1fr;
+}
 
- .screen-info h3{
-  font-size:2rem;
- }
+.explorer{
+gap:20px;
+}
 
- .screen-tabs{
-  justify-content:center;
- }
+.screen-area{
+min-height:450px;
+}
 
- .foot-row{
-  flex-direction:column;
-  align-items:flex-start;
- }
+.app-phone{
+width:245px;
+}
 
- .foot-links{
-  flex-wrap:wrap;
-  gap:15px;
- }
+.screen-info h3{
+font-size:2rem;
+}
+
+.screen-tabs{
+justify-content:center;
+}
+
+.foot-row{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.foot-links{
+flex-wrap:wrap;
+gap:15px;
+}
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
+
 <nav>
- <div class="wrap">
-  <a class="brand" href="#top">Stay Secure</a>
-  <div class="navlinks">
-   <a href="#features">Features</a>
-   <a href="#screens">Screens</a>
-   <a href="#stack">Tech</a>
-   <a href="#research">Research</a>
-   <a href="https://github.com/DHARANISIVARAMAKRISHNAN/stay-secure" target="_blank">GitHub</a>
-  </div>
- </div>
+<div class="wrap">
+
+<a class="brand" href="#top">Stay Secure</a>
+
+<div class="navlinks">
+<a href="#features">Features</a>
+<a href="#screens">Screens</a>
+<a href="#stack">Tech</a>
+<a href="#research">Research</a>
+<a href="https://github.com/DHARANISIVARAMAKRISHNAN/stay-secure" target="_blank">GitHub</a>
+</div>
+
+</div>
 </nav>
 
+
+<!-- HERO -->
+
 <header class="hero" id="top">
- <div class="wrap">
 
-  <div class="reveal">
-   <span class="eyebrow-tag">
-    <span class="dot"></span>
-    Women's Safety Android Application
-   </span>
+<div class="wrap">
 
-   <h1>Stay Secure</h1>
+<div class="reveal">
 
-   <p class="lede">
-    A women's safety Android application designed to provide
-    quick access to emergency contacts, SOS assistance,
-    location support, safety guidance and emergency features.
-   </p>
+<span class="eyebrow-tag">
+<span class="dot"></span>
+Women's Safety Android Application
+</span>
 
-   <div class="hero-actions">
-    <a class="btn btn-primary"
-       href="https://github.com/DHARANISIVARAMAKRISHNAN/stay-secure"
-       target="_blank">
-       View Source on GitHub
-    </a>
+<h1>Stay Secure</h1>
 
-    <a class="btn btn-ghost" href="#screens">
-       Explore App Screens
-    </a>
-   </div>
-  </div>
+<p class="lede">
+A women's safety Android application designed to provide
+quick access to emergency contacts, SOS assistance,
+location support, safety guidance and emergency features.
+</p>
 
-  <div class="hero-phone">
-   <div class="phone-frame">
-    <img src="screenshots/01-home-safe.png"
-         alt="Stay Secure Home Screen">
-   </div>
-  </div>
+<div class="hero-actions">
 
- </div>
+<a class="btn btn-primary"
+href="https://github.com/DHARANISIVARAMAKRISHNAN/stay-secure"
+target="_blank">
+View Source on GitHub
+</a>
+
+<a class="btn btn-ghost" href="#screens">
+Explore App Screens
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-phone">
+
+<div class="phone-frame">
+<img src="screenshots/01-home-safe.png"
+alt="Stay Secure Home Screen">
+</div>
+
+</div>
+
+</div>
 </header>
 
+
+<!-- FEATURES -->
+
 <section id="features">
- <div class="wrap">
 
-  <div class="section-head reveal">
-   <p class="section-label">Core Features</p>
-   <h2 class="section-title">
-    Designed for quick access when it matters
-   </h2>
-   <p class="section-body">
-    Stay Secure brings important safety features together
-    in one simple mobile application.
-   </p>
-  </div>
+<div class="wrap">
 
-  <div class="feature-grid">
+<div class="section-head reveal">
 
-   <div class="feature-card reveal">
-    <div class="ficon">✓</div>
-    <h3>Safety Status</h3>
-    <p>A clear home screen provides safety status and quick access to important features.</p>
-   </div>
+<p class="section-label">Core Features</p>
 
-   <div class="feature-card reveal">
-    <div class="ficon">SOS</div>
-    <h3>SOS Assistance</h3>
-    <p>Emergency assistance can be accessed quickly through the dedicated SOS feature.</p>
-   </div>
+<h2 class="section-title">
+Designed for quick access when it matters
+</h2>
 
-   <div class="feature-card reveal">
-    <div class="ficon">☎</div>
-    <h3>Emergency Contacts</h3>
-    <p>Store and access important emergency contacts for faster communication.</p>
-   </div>
+<p class="section-body">
+Stay Secure brings important safety features together
+in one simple mobile application.
+</p>
 
-   <div class="feature-card reveal">
-    <div class="ficon">GPS</div>
-    <h3>Location Assistance</h3>
-    <p>Location support helps provide the current location when emergency assistance is required.</p>
-   </div>
+</div>
 
-   <div class="feature-card reveal">
-    <div class="ficon">⚖</div>
-    <h3>Safety Awareness</h3>
-    <p>Safety information and women's safety awareness content are available within the application.</p>
-   </div>
 
-   <div class="feature-card reveal">
-    <div class="ficon">🛡</div>
-    <h3>Self-Defense Guidance</h3>
-    <p>Practical safety and self-defense guidance is provided for awareness and preparation.</p>
-   </div>
+<div class="feature-grid">
 
-  </div>
- </div>
+<div class="feature-card reveal">
+<div class="ficon">✓</div>
+<h3>Safety Status</h3>
+<p>
+A clear home screen provides safety status and quick access
+to important features.
+</p>
+</div>
+
+<div class="feature-card reveal">
+<div class="ficon">SOS</div>
+<h3>SOS Assistance</h3>
+<p>
+Emergency assistance can be accessed quickly through the
+dedicated SOS feature.
+</p>
+</div>
+
+<div class="feature-card reveal">
+<div class="ficon">☎</div>
+<h3>Emergency Contacts</h3>
+<p>
+Store and access important emergency contacts for faster
+communication.
+</p>
+</div>
+
+<div class="feature-card reveal">
+<div class="ficon">GPS</div>
+<h3>Location Assistance</h3>
+<p>
+Location support helps provide the current location when
+emergency assistance is required.
+</p>
+</div>
+
+<div class="feature-card reveal">
+<div class="ficon">⚖</div>
+<h3>Safety Awareness</h3>
+<p>
+Safety information and women's safety awareness content
+are available within the application.
+</p>
+</div>
+
+<div class="feature-card reveal">
+<div class="ficon">🛡</div>
+<h3>Self-Defense Guidance</h3>
+<p>
+Practical safety and self-defense guidance is provided
+for awareness and preparation.
+</p>
+</div>
+
+</div>
+</div>
 </section>
+
+
+<!-- APP SCREENS -->
 
 <section class="gallery-section" id="screens">
- <div class="wrap">
 
-  <div class="section-head reveal">
-   <p class="section-label">App Screens</p>
-   <h2 class="section-title">Explore Stay Secure</h2>
-   <p class="section-body">
-    Explore the application screen by screen using the interactive viewer.
-   </p>
-  </div>
+<div class="wrap">
 
-  <div class="explorer">
+<div class="section-head reveal">
 
-   <div class="screen-stage">
-    <img id="screenImage"
-         class="screen-image"
-         src="screenshots/01-home-safe.png"
-         alt="Stay Secure Home Screen">
-   </div>
+<p class="section-label">App Screens</p>
 
-   <div class="screen-info">
+<h2 class="section-title">
+Explore Stay Secure
+</h2>
 
-    <span class="screen-number" id="screenNumber">01 / 09</span>
+<p class="section-body">
+Explore the application screen by screen using the
+interactive mobile viewer.
+</p>
 
-    <h3 id="screenTitle">Home — Safety Status</h3>
+</div>
 
-    <p id="screenDescription">
-     The main dashboard provides a clear safety status and quick access
-     to important emergency features.
-    </p>
 
-    <ul id="screenFeatures">
-     <li>Safety status at a glance</li>
-     <li>Quick access to emergency features</li>
-     <li>Simple central dashboard</li>
-    </ul>
+<div class="explorer">
 
-    <div class="screen-controls">
-     <button class="control" id="prev" aria-label="Previous screen">←</button>
-     <button class="control" id="next" aria-label="Next screen">→</button>
-    </div>
 
-    <div class="screen-tabs" id="screenTabs"></div>
+<!-- PHONE -->
 
-   </div>
-  </div>
- </div>
+<div class="screen-area">
+
+<div class="app-phone" id="appPhone">
+
+<img id="screenImage"
+src="screenshots/11-welcome-dialog.png"
+alt="Stay Secure Welcome Screen">
+
+</div>
+
+</div>
+
+
+<!-- SCREEN DETAILS -->
+
+<div class="screen-info">
+
+<span class="screen-number" id="screenNumber">
+01 / 13
+</span>
+
+<h3 id="screenTitle">
+Welcome
+</h3>
+
+<p id="screenDescription">
+The welcome screen introduces the Stay Secure application
+and provides an entry point into the safety experience.
+</p>
+
+<ul class="screen-features" id="screenFeatures">
+<li>Application introduction</li>
+<li>Simple starting point</li>
+<li>Safety-focused experience</li>
+</ul>
+
+
+<div class="screen-controls">
+
+<button class="control"
+id="prev"
+aria-label="Previous screen">
+←
+</button>
+
+<button class="control"
+id="next"
+aria-label="Next screen">
+→
+</button>
+
+</div>
+
+
+<div class="screen-tabs" id="screenTabs"></div>
+
+</div>
+
+</div>
+</div>
 </section>
+
+
+<!-- TECHNOLOGY -->
 
 <section id="stack">
- <div class="wrap">
 
-  <div class="section-head reveal">
-   <p class="section-label">Technology</p>
-   <h2 class="section-title">Built with a practical mobile stack</h2>
-  </div>
+<div class="wrap">
 
-  <div class="stack-row">
-   <span class="chip">Flutter</span>
-   <span class="chip">Dart</span>
-   <span class="chip">PHP</span>
-   <span class="chip">MySQL</span>
-   <span class="chip">Geolocator</span>
-   <span class="chip">URL Launcher</span>
-   <span class="chip">Provider</span>
-   <span class="chip">XAMPP</span>
-  </div>
+<div class="section-head reveal">
 
- </div>
+<p class="section-label">Technology</p>
+
+<h2 class="section-title">
+Built with a practical mobile stack
+</h2>
+
+</div>
+
+<div class="stack-row">
+
+<span class="chip">Flutter</span>
+<span class="chip">Dart</span>
+<span class="chip">PHP</span>
+<span class="chip">MySQL</span>
+<span class="chip">Geolocator</span>
+<span class="chip">URL Launcher</span>
+<span class="chip">Provider</span>
+<span class="chip">XAMPP</span>
+
+</div>
+
+</div>
 </section>
+
+
+<!-- RESEARCH -->
 
 <section id="research">
- <div class="wrap">
 
-  <div class="section-head reveal">
-   <p class="section-label">Published Work</p>
-   <h2 class="section-title">Research behind the project</h2>
-  </div>
+<div class="wrap">
 
-  <div class="research-card reveal">
-   <p>
-    Stay Secure was documented as a research paper covering
-    the design and development of a women's safety Android application.
-   </p>
+<div class="section-head reveal">
 
-   <p class="meta">
-    Journal of Multidisciplinary Research & Review (JMRR) ·
-    ISSN 2708-9452 · Volume 6, Issue 2 · April 2025
-   </p>
-  </div>
+<p class="section-label">Published Work</p>
 
- </div>
+<h2 class="section-title">
+Research behind the project
+</h2>
+
+</div>
+
+
+<div class="research-card reveal">
+
+<p>
+Stay Secure was documented as a research paper covering
+the design and development of a women's safety Android
+application.
+</p>
+
+<p class="meta">
+Journal of Multidisciplinary Research & Review (JMRR) ·
+ISSN 2708-9452 · Volume 6, Issue 2 · April 2025
+</p>
+
+</div>
+
+</div>
 </section>
 
+
+<!-- FOOTER -->
+
 <footer>
- <div class="wrap">
 
-  <div class="foot-row">
-   <span class="brand-line">Stay Secure</span>
+<div class="wrap">
 
-   <div class="foot-links">
-    <a href="https://github.com/DHARANISIVARAMAKRISHNAN/stay-secure"
-       target="_blank">
-       GitHub Repository
-    </a>
+<div class="foot-row">
 
-    <a href="index.html">← Back to Portfolio</a>
-   </div>
-  </div>
+<span class="brand-line">
+Stay Secure
+</span>
 
-  <p class="copy">
-   Built by Dharani S — Flutter & Android Developer.
-  </p>
+<div class="foot-links">
 
- </div>
+<a href="https://github.com/DHARANISIVARAMAKRISHNAN/stay-secure"
+target="_blank">
+GitHub Repository
+</a>
+
+<a href="index.html">
+← Back to Portfolio
+</a>
+
+</div>
+
+</div>
+
+<p class="copy">
+Built by Dharani S — Flutter & Android Developer.
+</p>
+
+</div>
+
 </footer>
 
+
 <script>
+
+/* SCREEN DATA */
+
 const screens=[
- {
-  img:"screenshots/01-home-safe.png",
-  title:"Home — Safety Status",
-  desc:"The main dashboard provides a clear safety status and quick access to important emergency features.",
-  points:["Safety status at a glance","Quick access to emergency features","Simple central dashboard"]
- },
- {
-  img:"screenshots/03-login.png",
-  title:"Login",
-  desc:"The login screen provides access to the user's Stay Secure account.",
-  points:["Simple authentication flow","User account access","Clean interface"]
- },
- {
-  img:"screenshots/02-register-1.png",
-  title:"Register — Details",
-  desc:"New users can enter their details during the registration process.",
-  points:["New user registration","Personal details","Simple registration flow"]
- },
- {
-  img:"screenshots/08-register-2.png",
-  title:"Register — Contacts",
-  desc:"Emergency contact information can be added as part of the safety setup.",
-  points:["Emergency contact setup","Important contact details","Safety preparation"]
- },
- {
-  img:"screenshots/04-menu-drawer.png",
-  title:"Menu",
-  desc:"The navigation menu provides access to the main sections of the application.",
-  points:["Organised navigation","Quick access to features","Safety resources"]
- },
- {
-  img:"screenshots/05-profile.png",
-  title:"Profile",
-  desc:"The profile screen provides access to the user's account information.",
-  points:["Profile information","Account access","Easy navigation"]
- },
- {
-  img:"screenshots/06-emergency-contacts.png",
-  title:"Emergency Contacts",
-  desc:"Important emergency contacts can be viewed and accessed when needed.",
-  points:["Emergency contact list","Quick communication access","Safety-focused contact management"]
- },
- {
-  img:"screenshots/07-women-laws.png",
-  title:"Safety Awareness",
-  desc:"The application provides women's safety awareness and legal information.",
-  points:["Safety awareness","Women's safety information","Easy-to-read guidance"]
- },
- {
-  img:"screenshots/09-sos-features.png",
-  title:"SOS Features",
-  desc:"Emergency assistance features are grouped together for quick access.",
-  points:["Emergency assistance","SOS-related features","Quick access during emergencies"]
- }
+
+{
+img:"screenshots/11-welcome-dialog.png",
+title:"Welcome",
+desc:"The welcome screen introduces the Stay Secure application and provides an entry point into the safety experience.",
+points:[
+"Application introduction",
+"Simple starting point",
+"Safety-focused experience"
+]
+},
+
+{
+img:"screenshots/01-home-safe.png",
+title:"Home — Safety Status",
+desc:"The main dashboard provides a clear safety status and quick access to important emergency features.",
+points:[
+"Safety status at a glance",
+"Quick access to emergency features",
+"Simple central dashboard"
+]
+},
+
+{
+img:"screenshots/12-home-sos.png",
+title:"Home — SOS",
+desc:"The SOS state provides quick access to emergency assistance from the main application screen.",
+points:[
+"Quick emergency access",
+"SOS-focused interface",
+"Emergency assistance"
+]
+},
+
+{
+img:"screenshots/13-confirm-panic.png",
+title:"Confirm Emergency Alert",
+desc:"The confirmation screen helps the user confirm an emergency action before proceeding.",
+points:[
+"Emergency action confirmation",
+"Clear emergency messaging",
+"Helps avoid accidental activation"
+]
+},
+
+{
+img:"screenshots/03-login.png",
+title:"Login",
+desc:"The login screen provides access to the user's Stay Secure account.",
+points:[
+"Simple authentication flow",
+"User account access",
+"Clean interface"
+]
+},
+
+{
+img:"screenshots/02-register-1.png",
+title:"Register — Details",
+desc:"New users can enter their details during the registration process.",
+points:[
+"New user registration",
+"Personal details",
+"Simple registration flow"
+]
+},
+
+{
+img:"screenshots/08-register-2.png",
+title:"Register — Contacts",
+desc:"Emergency contact information can be added during the safety setup process.",
+points:[
+"Emergency contact setup",
+"Important contact details",
+"Safety preparation"
+]
+},
+
+{
+img:"screenshots/04-menu-drawer.png",
+title:"Menu",
+desc:"The navigation menu provides access to the main sections of the application.",
+points:[
+"Organised navigation",
+"Quick access to features",
+"Safety resources"
+]
+},
+
+{
+img:"screenshots/05-profile.png",
+title:"Profile",
+desc:"The profile screen provides access to the user's account information.",
+points:[
+"Profile information",
+"Account access",
+"Easy navigation"
+],
+profile:true
+},
+
+{
+img:"screenshots/06-emergency-contacts.png",
+title:"Emergency Contacts",
+desc:"Important emergency contacts can be viewed and accessed when needed.",
+points:[
+"Emergency contact list",
+"Quick communication access",
+"Contact management"
+]
+},
+
+{
+img:"screenshots/07-women-laws.png",
+title:"Safety Awareness",
+desc:"The application provides women's safety awareness and legal information.",
+points:[
+"Safety awareness",
+"Women's safety information",
+"Easy-to-read guidance"
+]
+},
+
+{
+img:"screenshots/10-self-defense-guide.png",
+title:"Self-Defense Guide",
+desc:"The application provides practical safety and self-defense guidance.",
+points:[
+"Self-defense guidance",
+"Safety preparation",
+"Awareness and learning"
+]
+},
+
+{
+img:"screenshots/09-sos-features.png",
+title:"SOS Features",
+desc:"Emergency assistance features are grouped together for quick access.",
+points:[
+"Emergency assistance",
+"SOS-related features",
+"Quick access during emergencies"
+]
+}
+
 ];
 
+
+/* ELEMENTS */
+
 const image=document.getElementById("screenImage");
+const phone=document.getElementById("appPhone");
 const number=document.getElementById("screenNumber");
 const title=document.getElementById("screenTitle");
-const desc=document.getElementById("screenDescription");
-const features=document.getElementById("screenFeatures");
+const description=document.getElementById("screenDescription");
+const featureList=document.getElementById("screenFeatures");
 const tabs=document.getElementById("screenTabs");
 
 let current=0;
 
-screens.forEach((screen,i)=>{
- const button=document.createElement("button");
- button.className="screen-tab";
- button.textContent=screen.title.split(" — ")[0];
- button.onclick=()=>showScreen(i);
- tabs.appendChild(button);
+
+/* CREATE TABS */
+
+screens.forEach((screen,index)=>{
+
+const button=document.createElement("button");
+
+button.className="screen-tab";
+button.textContent=screen.title.split(" — ")[0];
+
+button.onclick=()=>showScreen(index);
+
+tabs.appendChild(button);
+
 });
 
-function showScreen(i){
- current=(i+screens.length)%screens.length;
- const s=screens[current];
 
- image.style.animation="none";
- void image.offsetWidth;
- image.style.animation="screenIn .45s ease";
+/* CHANGE SCREEN */
 
- image.src=s.img;
- image.alt="Stay Secure "+s.title;
- number.textContent=`${String(current+1).padStart(2,"0")} / ${screens.length}`;
- title.textContent=s.title;
- desc.textContent=s.desc;
+function showScreen(index){
 
- features.innerHTML=s.points.map(p=>`<li>${p}</li>`).join("");
+current=(index+screens.length)%screens.length;
 
- document.querySelectorAll(".screen-tab").forEach((b,n)=>{
-  b.classList.toggle("active",n===current);
- });
+const screen=screens[current];
+
+
+/* animation */
+
+image.classList.remove("screen-animate");
+
+void image.offsetWidth;
+
+image.classList.add("screen-animate");
+
+
+/* image */
+
+image.src=screen.img;
+image.alt="Stay Secure "+screen.title;
+
+
+/* profile frame handling */
+
+phone.classList.toggle("profile-mode",!!screen.profile);
+
+
+/* details */
+
+number.textContent=
+`${String(current+1).padStart(2,"0")} / ${screens.length}`;
+
+title.textContent=screen.title;
+
+description.textContent=screen.desc;
+
+featureList.innerHTML=
+screen.points.map(point=>`<li>${point}</li>`).join("");
+
+
+/* active tab */
+
+document.querySelectorAll(".screen-tab").forEach((tab,i)=>{
+
+tab.classList.toggle("active",i===current);
+
+});
+
 }
 
-document.getElementById("prev").onclick=()=>showScreen(current-1);
-document.getElementById("next").onclick=()=>showScreen(current+1);
+
+/* PREVIOUS / NEXT */
+
+document.getElementById("prev").onclick=
+()=>showScreen(current-1);
+
+document.getElementById("next").onclick=
+()=>showScreen(current+1);
+
+
+/* KEYBOARD */
+
+document.addEventListener("keydown",event=>{
+
+if(event.key==="ArrowRight")
+showScreen(current+1);
+
+if(event.key==="ArrowLeft")
+showScreen(current-1);
+
+});
+
+
+/* INITIAL */
 
 showScreen(0);
 
-/* Scroll animation */
+
+/* SCROLL REVEAL */
 
 const observer=new IntersectionObserver(entries=>{
- entries.forEach(entry=>{
-  if(entry.isIntersecting){
-   entry.target.classList.add("visible");
-   observer.unobserve(entry.target);
-  }
- });
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("visible");
+
+observer.unobserve(entry.target);
+
+}
+
+});
+
 },{threshold:.12});
 
-document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+document.querySelectorAll(".reveal")
+.forEach(element=>observer.observe(element));
+
 </script>
 
 </body>
