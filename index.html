@@ -1,410 +1,1728 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Stay Secure — Women's Safety App | Dharani S</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
 <style>
-  :root{
-    --ink: #241019;
-    --ink-soft: #5c3a49;
-    --berry: #7a1f4b;
-    --berry-deep: #4e1030;
-    --rose: #c9184a;
-    --blush: #fbe7ed;
-    --blush-deep: #f6d3df;
-    --cream: #fff8f6;
-    --gold: #c9a15a;
-    --line: rgba(122,31,75,0.16);
-    --shadow: 0 20px 45px rgba(78,16,48,0.14);
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--cream);
-    color:var(--ink);
-    font-family:'Inter',sans-serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  img{max-width:100%;display:block;}
-  a{color:inherit;}
 
-  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+/* =========================================================
+   ROOT
+========================================================= */
 
-  /* ---------- NAV ---------- */
-  nav{
-    position:sticky;top:0;z-index:40;
-    background:rgba(255,248,246,0.92);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
-  }
-  nav .wrap{
-    display:flex;align-items:center;justify-content:space-between;
-    padding-top:16px;padding-bottom:16px;
-  }
-  .brand{font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;letter-spacing:0.01em;text-decoration:none;color:var(--berry-deep);}
-  .navlinks{display:flex;gap:28px;font-size:0.92rem;font-weight:500;}
-  .navlinks a{text-decoration:none;color:var(--ink-soft);border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .2s;}
-  .navlinks a:hover{border-color:var(--rose);}
-  @media (max-width:640px){.navlinks{display:none;}}
+:root {
+    --pink-50: #fff5f8;
+    --pink-100: #ffe7ef;
+    --pink-200: #ffcbdc;
+    --pink-300: #f99fbd;
+    --pink-400: #ee6f9b;
+    --pink-500: #df4779;
+    --pink-600: #c92f63;
+    --pink-700: #a8204f;
+    --pink-800: #7d193d;
+    --pink-900: #54132d;
 
-  /* ---------- HERO ---------- */
-  header.hero{
-    position:relative;
-    overflow:hidden;
-    padding:88px 0 72px;
+    --text: #28131c;
+    --text-soft: #6d4b59;
+    --white: #ffffff;
+
+    --border: rgba(201, 47, 99, 0.14);
+
+    --shadow-sm: 0 8px 25px rgba(125, 25, 61, 0.08);
+    --shadow-md: 0 18px 45px rgba(125, 25, 61, 0.13);
+    --shadow-lg: 0 30px 70px rgba(125, 25, 61, 0.20);
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: var(--pink-50);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.wrap {
+    width: min(1120px, calc(100% - 40px));
+    margin: auto;
+}
+
+section {
+    padding: 90px 0;
+}
+
+.section-head {
+    max-width: 680px;
+    margin-bottom: 45px;
+}
+
+.section-label {
+    color: var(--pink-600);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.76rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-family: "Playfair Display", serif;
+    color: var(--pink-900);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+    margin-bottom: 15px;
+}
+
+.section-body {
+    color: var(--text-soft);
+    font-size: 1rem;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255, 245, 248, 0.92);
+    backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+nav .wrap {
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    text-decoration: none;
+
+    font-family: "Playfair Display", serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+
+    color: var(--pink-800);
+}
+
+.navlinks {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.navlinks a {
+    text-decoration: none;
+    color: var(--text-soft);
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    transition: 0.25s ease;
+}
+
+.navlinks a:hover {
+    color: var(--pink-600);
+}
+
+@media (max-width: 760px) {
+
+    .navlinks {
+        display: none;
+    }
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+
+    padding: 105px 0 95px;
+
     background:
-      radial-gradient(680px 420px at 82% -10%, var(--blush-deep) 0%, transparent 60%),
-      linear-gradient(180deg, var(--cream) 0%, var(--cream) 100%);
-  }
-  .hero .wrap{display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:center;}
-  @media (max-width:860px){.hero .wrap{grid-template-columns:1fr;}}
+        radial-gradient(
+            circle at 85% 10%,
+            rgba(249, 159, 189, 0.38),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(238, 111, 155, 0.13),
+            transparent 30%
+        ),
+        var(--pink-50);
+}
 
-  .eyebrow-tag{
-    display:inline-flex;align-items:center;gap:8px;
-    font-size:0.82rem;color:var(--berry);
-    background:var(--blush);border:1px solid var(--line);
-    padding:6px 14px;border-radius:99px;margin-bottom:22px;
-  }
-  .eyebrow-tag span.dot{width:6px;height:6px;border-radius:50%;background:#3fae5c;display:inline-block;}
+.hero .wrap {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 80px;
+}
 
-  h1.title{
-    font-family:'Fraunces',serif;
-    font-weight:600;
-    font-size:clamp(2.4rem, 5vw, 3.4rem);
-    line-height:1.06;
-    margin:0 0 22px;
-    color:var(--berry-deep);
-  }
-  .hero p.lede{
-    font-size:1.08rem;
-    color:var(--ink-soft);
-    max-width:46ch;
-    margin:0 0 30px;
-  }
-  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
-  .btn{
-    display:inline-block;padding:13px 26px;border-radius:10px;
-    font-weight:600;font-size:0.95rem;text-decoration:none;
-    transition:transform .15s ease, box-shadow .15s ease;
-  }
-  .btn-primary{background:var(--berry-deep);color:#fff8f6;box-shadow:0 10px 24px rgba(78,16,48,0.28);}
-  .btn-primary:hover{transform:translateY(-2px);}
-  .btn-ghost{background:transparent;color:var(--berry-deep);border:1.5px solid var(--berry-deep);}
-  .btn-ghost:hover{background:var(--blush);}
+.eyebrow-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
 
-  .hero-phone{
-    position:relative;
-    display:flex;justify-content:center;
-  }
-  .phone-frame{
-    width:250px;
-    filter:drop-shadow(0 20px 40px rgba(78,16,48,0.28));
-    transform:rotate(-3deg);
-  }
-  .phone-frame img{border-radius:14px;}
+    padding: 8px 15px;
 
-  /* ---------- SECTION SHARED ---------- */
-  section{padding:64px 0;}
-  .section-head{max-width:56ch;margin-bottom:38px;}
-  .section-label{
-    font-size:0.8rem;font-weight:600;color:var(--rose);
-    margin:0 0 10px;
-  }
-  h2.section-title{
-    font-family:'Fraunces',serif;font-weight:600;
-    font-size:clamp(1.6rem,3vw,2.15rem);
-    margin:0 0 14px;color:var(--berry-deep);
-  }
-  .section-body{color:var(--ink-soft);font-size:1rem;}
+    background: var(--pink-100);
+    border: 1px solid var(--pink-200);
+    border-radius: 999px;
 
-  /* ---------- FEATURES ---------- */
-  .feature-grid{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
-  }
-  @media (max-width:760px){.feature-grid{grid-template-columns:1fr 1fr;}}
-  @media (max-width:520px){.feature-grid{grid-template-columns:1fr;}}
-  .feature-card{
-    background:var(--blush);
-    border:1px solid var(--line);
-    border-radius:16px;
-    padding:24px 22px;
-  }
-  .feature-card .ficon{
-    width:40px;height:40px;border-radius:10px;
-    background:var(--berry-deep);color:#fff;
-    display:flex;align-items:center;justify-content:center;
-    font-size:1.05rem;margin-bottom:16px;
-  }
-  .feature-card h3{
-    font-size:1.02rem;margin:0 0 8px;color:var(--berry-deep);font-weight:600;
-  }
-  .feature-card p{margin:0;font-size:0.92rem;color:var(--ink-soft);}
+    color: var(--pink-700);
 
-  /* ---------- GALLERY ---------- */
-  .gallery-section{background:var(--berry-deep);color:var(--blush);}
-  .gallery-section .section-label{color:var(--gold);}
-  .gallery-section h2.section-title{color:#fff8f6;}
-  .gallery-section .section-body{color:#e9c9d6;}
-  .gallery-strip{
-    display:flex;gap:20px;overflow-x:auto;padding:30px 0 12px;
-    scroll-snap-type:x mandatory;
-    -webkit-overflow-scrolling:touch;
-  }
-  .gallery-strip::-webkit-scrollbar{height:8px;}
-  .gallery-strip::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.25);border-radius:99px;}
-  .gitem{
-    flex:0 0 auto;scroll-snap-align:start;
-    width:172px;text-align:center;
-  }
-  .gitem .frame{
-    filter:drop-shadow(0 14px 28px rgba(0,0,0,0.35));
-    border-radius:14px;
-    transition:transform .28s cubic-bezier(.22,1,.36,1), filter .28s ease;
-    cursor:pointer;
-  }
-  .gitem .frame img{
-    border-radius:10px;
-    display:block;
-    outline:2px solid transparent;
-    outline-offset:4px;
-    transition:outline-color .28s ease;
-  }
-  .gitem:hover .frame,
-  .gitem:focus-within .frame,
-  .gitem.is-active .frame{
-    transform:translateY(-8px) scale(1.05);
-    filter:drop-shadow(0 22px 38px rgba(0,0,0,0.45));
-  }
-  .gitem:hover .frame img,
-  .gitem:focus-within .frame img,
-  .gitem.is-active .frame img{
-    outline-color:var(--gold);
-  }
-  .gitem .frame:active{
-    transform:translateY(-4px) scale(0.98);
-    transition-duration:.1s;
-  }
-  .gitem .cap{
-    margin-top:12px;font-size:0.82rem;color:#f3d9e2;
-    transition:color .28s ease;
-  }
-  .gitem:hover .cap,
-  .gitem:focus-within .cap,
-  .gitem.is-active .cap{
-    color:#fff;
-  }
+    font-size: 0.8rem;
+    font-weight: 700;
 
-  /* ---------- TECH STACK ---------- */
-  .stack-row{
-    display:flex;flex-wrap:wrap;gap:12px;
-  }
-  .chip{
-    background:var(--cream);
-    border:1px solid var(--line);
-    padding:9px 18px;border-radius:99px;
-    font-size:0.88rem;font-weight:500;color:var(--berry-deep);
-  }
+    margin-bottom: 24px;
+}
 
-  /* ---------- RESEARCH ---------- */
-  .research-card{
-    border:1px solid var(--line);
-    border-left:4px solid var(--rose);
-    background:var(--blush);
-    border-radius:14px;
-    padding:26px 28px;
-  }
-  .research-card p{margin:0 0 6px;font-size:0.95rem;color:var(--ink-soft);}
-  .research-card .meta{font-size:0.85rem;color:var(--berry);font-weight:500;}
+.eyebrow-tag .dot {
+    width: 7px;
+    height: 7px;
+    background: var(--pink-500);
+    border-radius: 50%;
+}
 
-  /* ---------- LINKS FOOTER ---------- */
-  footer{
-    padding:50px 0 60px;
-    border-top:1px solid var(--line);
-  }
-  .foot-row{
-    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
-  }
-  footer .brand-line{font-family:'Fraunces',serif;color:var(--berry-deep);font-weight:600;}
-  footer .foot-links{display:flex;gap:22px;font-size:0.9rem;}
-  footer .foot-links a{text-decoration:none;color:var(--ink-soft);}
-  footer .foot-links a:hover{color:var(--rose);}
-  footer .copy{font-size:0.8rem;color:#9b7686;margin-top:26px;}
+.hero h1 {
+    font-family: "Playfair Display", serif;
+
+    color: var(--pink-900);
+
+    font-size: clamp(2.8rem, 6vw, 4.7rem);
+
+    line-height: 1.05;
+
+    max-width: 720px;
+
+    margin-bottom: 24px;
+}
+
+.hero .lede {
+    max-width: 600px;
+
+    color: var(--text-soft);
+
+    font-size: 1.08rem;
+
+    margin-bottom: 32px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 24px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+    font-size: 0.92rem;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(
+        135deg,
+        var(--pink-700),
+        var(--pink-500)
+    );
+
+    color: white;
+
+    box-shadow: 0 12px 30px rgba(201, 47, 99, 0.25);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 18px 35px rgba(201, 47, 99, 0.30);
+}
+
+.btn-ghost {
+    border: 1.5px solid var(--pink-600);
+
+    color: var(--pink-700);
+
+    background: rgba(255,255,255,0.5);
+}
+
+.btn-ghost:hover {
+    background: var(--pink-100);
+
+    transform: translateY(-3px);
+}
+
+/* =========================================================
+   HERO PHONE
+========================================================= */
+
+.hero-phone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone-frame {
+    width: min(290px, 80%);
+
+    padding: 8px;
+
+    background: #160c11;
+
+    border-radius: 35px;
+
+    box-shadow: var(--shadow-lg);
+
+    transform: rotate(3deg);
+
+    transition: 0.4s ease;
+}
+
+.phone-frame:hover {
+    transform: rotate(0deg) translateY(-8px);
+}
+
+.phone-frame img {
+    width: 100%;
+
+    border-radius: 28px;
+
+    background: white;
+}
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+#features {
+    background: white;
+}
+
+.feature-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.feature-card {
+    padding: 30px 26px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            var(--pink-50)
+        );
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-7px);
+
+    border-color: var(--pink-300);
+
+    box-shadow: var(--shadow-md);
+}
+
+.ficon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--pink-700),
+            var(--pink-400)
+        );
+
+    color: white;
+
+    font-size: 1.05rem;
+    font-weight: 700;
+
+    margin-bottom: 20px;
+
+    box-shadow: 0 10px 20px rgba(201,47,99,0.20);
+}
+
+.feature-card h3 {
+    color: var(--pink-900);
+
+    font-size: 1.05rem;
+
+    margin-bottom: 9px;
+}
+
+.feature-card p {
+    color: var(--text-soft);
+
+    font-size: 0.92rem;
+}
+
+/* =========================================================
+   SCREENSHOTS
+========================================================= */
+
+.gallery-section {
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(255,255,255,0.10),
+            transparent 25%
+        ),
+        linear-gradient(
+            145deg,
+            var(--pink-900),
+            var(--pink-700)
+        );
+
+    color: white;
+}
+
+.gallery-section .section-label {
+    color: var(--pink-200);
+}
+
+.gallery-section .section-title {
+    color: white;
+}
+
+.gallery-section .section-body {
+    color: #f9dce7;
+}
+
+/* Screenshot grid */
+
+.gallery-strip {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 38px 28px;
+
+    padding-top: 15px;
+}
+
+/* Each screenshot */
+
+.gitem {
+    text-align: center;
+
+    cursor: pointer;
+
+    outline: none;
+}
+
+/* Phone/card container */
+
+.gitem .frame {
+
+    width: min(220px, 100%);
+
+    margin: auto;
+
+    padding: 7px;
+
+    background: #170b10;
+
+    border-radius: 27px;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.30);
+
+    transition:
+        transform 0.35s cubic-bezier(.22,1,.36,1),
+        box-shadow 0.35s ease;
+}
+
+.gitem .frame img {
+
+    width: 100%;
+
+    aspect-ratio: 9 / 18;
+
+    object-fit: cover;
+
+    border-radius: 21px;
+
+    background: white;
+}
+
+.gitem:hover .frame,
+.gitem:focus .frame,
+.gitem.is-active .frame {
+
+    transform:
+        translateY(-10px)
+        scale(1.035);
+
+    box-shadow:
+        0 30px 60px rgba(0,0,0,0.42);
+}
+
+.gitem .cap {
+
+    margin-top: 16px;
+
+    color: #ffe5ee;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+}
+
+.gitem:hover .cap {
+    color: white;
+}
+
+/* =========================================================
+   TECH STACK
+========================================================= */
+
+#stack {
+    background: var(--pink-50);
+}
+
+.stack-row {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 13px;
+}
+
+.chip {
+    padding: 11px 19px;
+
+    border-radius: 999px;
+
+    background: white;
+
+    border: 1px solid var(--pink-200);
+
+    color: var(--pink-800);
+
+    font-size: 0.88rem;
+
+    font-weight: 600;
+
+    box-shadow: var(--shadow-sm);
+
+    transition: 0.25s ease;
+}
+
+.chip:hover {
+    background: var(--pink-100);
+
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   RESEARCH
+========================================================= */
+
+#research {
+    background: white;
+}
+
+.research-card {
+
+    position: relative;
+
+    padding: 32px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--pink-50),
+            white
+        );
+
+    border: 1px solid var(--pink-200);
+
+    border-radius: 20px;
+
+    box-shadow: var(--shadow-sm);
+
+    overflow: hidden;
+}
+
+.research-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 5px;
+
+    background:
+        linear-gradient(
+            var(--pink-700),
+            var(--pink-400)
+        );
+}
+
+.research-card p {
+
+    color: var(--text-soft);
+
+    font-size: 0.96rem;
+
+    margin-bottom: 10px;
+}
+
+.research-card .meta {
+
+    color: var(--pink-700);
+
+    font-size: 0.86rem;
+
+    font-weight: 700;
+
+    margin: 0;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    padding: 55px 0;
+
+    background: var(--pink-50);
+
+    border-top: 1px solid var(--border);
+}
+
+.foot-row {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+.brand-line {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 1.2rem;
+
+    font-weight: 700;
+
+    color: var(--pink-800);
+}
+
+.foot-links {
+
+    display: flex;
+
+    gap: 25px;
+}
+
+.foot-links a {
+
+    text-decoration: none;
+
+    color: var(--text-soft);
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+}
+
+.foot-links a:hover {
+    color: var(--pink-600);
+}
+
+.copy {
+
+    margin-top: 25px;
+
+    color: #9b7785;
+
+    font-size: 0.8rem;
+}
+
+/* =========================================================
+   IMAGE LIGHTBOX
+========================================================= */
+
+.lightbox {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 5000;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background: rgba(35, 8, 18, 0.88);
+
+    backdrop-filter: blur(10px);
+}
+
+.lightbox.show {
+    display: flex;
+}
+
+.lightbox-content {
+
+    position: relative;
+
+    max-height: 92vh;
+
+    max-width: min(420px, 90vw);
+
+    animation: popup 0.25s ease;
+}
+
+.lightbox-content img {
+
+    max-height: 88vh;
+
+    width: auto;
+
+    max-width: 100%;
+
+    border-radius: 25px;
+
+    padding: 7px;
+
+    background: #15090e;
+
+    box-shadow: 0 35px 80px rgba(0,0,0,0.55);
+}
+
+.lightbox-close {
+
+    position: absolute;
+
+    right: -15px;
+    top: -15px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: var(--pink-800);
+
+    font-size: 1.3rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+@keyframes popup {
+
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .hero .wrap {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        gap: 55px;
+    }
+
+    .hero h1,
+    .hero .lede {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+
+    .wrap {
+        width: min(100% - 28px, 1120px);
+    }
+
+    section {
+        padding: 70px 0;
+    }
+
+    .hero {
+        padding: 75px 0 70px;
+    }
+
+    .hero h1 {
+        font-size: 2.7rem;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 28px 14px;
+    }
+
+    .gitem .frame {
+        width: 100%;
+
+        padding: 5px;
+
+        border-radius: 20px;
+    }
+
+    .gitem .frame img {
+        border-radius: 16px;
+    }
+
+    .gitem .cap {
+        font-size: 0.78rem;
+    }
+
+    .foot-row {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .foot-links {
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+}
+
 </style>
 </head>
+
 <body>
 
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
 <nav>
-  <div class="wrap">
-    <a class="brand" href="#top">Stay Secure</a>
-    <div class="navlinks">
-      <a href="#features">Features</a>
-      <a href="#screens">Screens</a>
-      <a href="#stack">Tech</a>
-      <a href="#research">Research</a>
-      <a href="https://github.com/DHARANISIVARAMAKRISHNAN/stay-secure" target="_blank" rel="noopener">GitHub</a>
+
+    <div class="wrap">
+
+        <a class="brand" href="#top">
+            Stay Secure
+        </a>
+
+        <div class="navlinks">
+
+            <a href="#features">Features</a>
+
+            <a href="#screens">Screens</a>
+
+            <a href="#stack">Tech</a>
+
+            <a href="#research">Research</a>
+
+            <a
+                href="https://github.com/DHARANISIVARAMAKRISHNAN/stay-secure"
+                target="_blank"
+                rel="noopener"
+            >
+                GitHub
+            </a>
+
+        </div>
+
     </div>
-  </div>
+
 </nav>
 
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
 <header class="hero" id="top">
-  <div class="wrap">
-    <div>
-      <span class="eyebrow-tag"><span class="dot"></span>Final-year project, rebuilt for production</span>
-      <h1 class="title">A safety app that stays one tap away from help.</h1>
-      <p class="lede">Stay Secure is an Android app that gives women instant access to emergency contacts, one-tap SOS alerts, live location sharing, and a plain-language guide to their legal rights — built with Flutter, PHP, and MySQL.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="https://github.com/DHARANISIVARAMAKRISHNAN/stay-secure" target="_blank" rel="noopener">View source on GitHub</a>
-        <a class="btn btn-ghost" href="#screens">See the app</a>
-      </div>
+
+    <div class="wrap">
+
+        <div>
+
+            <span class="eyebrow-tag">
+
+                <span class="dot"></span>
+
+                Women's Safety Android Application
+
+            </span>
+
+            <h1>
+                Stay Secure
+            </h1>
+
+            <p class="lede">
+
+                A women's safety Android application designed to
+                provide quick access to emergency contacts, SOS
+                assistance, location support, safety guidance and
+                emergency features.
+
+            </p>
+
+            <div class="hero-actions">
+
+                <a
+                    class="btn btn-primary"
+                    href="https://github.com/DHARANISIVARAMAKRISHNAN/stay-secure"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    View Source on GitHub
+                </a>
+
+                <a
+                    class="btn btn-ghost"
+                    href="#screens"
+                >
+                    Explore App Screens
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-phone">
+
+            <div class="phone-frame">
+
+                <img
+                    src="screenshots/01-home-safe.png"
+                    alt="Stay Secure Home Screen"
+                >
+
+            </div>
+
+        </div>
+
     </div>
-    <div class="hero-phone">
-      <div class="phone-frame">
-        <img src="screenshots/01-home-safe.png" alt="Stay Secure home screen showing SAFE status">
-      </div>
-    </div>
-  </div>
+
 </header>
 
+
+<!-- =====================================================
+     FEATURES
+===================================================== -->
+
 <section id="features">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="section-label">What it does</p>
-      <h2 class="section-title">Built around the moments that matter most</h2>
-      <p class="section-body">Every screen answers one question: how fast can a person in distress get help, and how easily can the people around them find out?</p>
+
+    <div class="wrap">
+
+        <div class="section-head">
+
+            <p class="section-label">
+                Core Features
+            </p>
+
+            <h2 class="section-title">
+                Designed for quick access when it matters
+            </h2>
+
+            <p class="section-body">
+                Stay Secure brings important safety features
+                together in one simple mobile application.
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+
+            <div class="feature-card">
+
+                <div class="ficon">
+                    ✓
+                </div>
+
+                <h3>
+                    Safety Status
+                </h3>
+
+                <p>
+                    A simple home screen provides a clear safety
+                    status and quick access to important features.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="ficon">
+                    SOS
+                </div>
+
+                <h3>
+                    SOS Assistance
+                </h3>
+
+                <p>
+                    Emergency assistance can be accessed quickly
+                    through the dedicated SOS feature.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="ficon">
+                    ☎
+                </div>
+
+                <h3>
+                    Emergency Contacts
+                </h3>
+
+                <p>
+                    Store and access important emergency contacts
+                    for faster communication during an emergency.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="ficon">
+                    GPS
+                </div>
+
+                <h3>
+                    Location Assistance
+                </h3>
+
+                <p>
+                    Location support helps provide the user's
+                    current location when emergency assistance
+                    is required.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="ficon">
+                    ⚖
+                </div>
+
+                <h3>
+                    Safety Awareness
+                </h3>
+
+                <p>
+                    Safety information and women's safety awareness
+                    content are available within the application.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="ficon">
+                    🛡
+                </div>
+
+                <h3>
+                    Self-Defense Guidance
+                </h3>
+
+                <p>
+                    Practical safety and self-defense guidance
+                    is provided for awareness and preparation.
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <div class="ficon">✓</div>
-        <h3>Status at a glance</h3>
-        <p>A single SAFE indicator on the home screen, so the user's own status is never more than a glance away.</p>
-      </div>
-      <div class="feature-card">
-        <div class="ficon">⚠</div>
-        <h3>SOS features</h3>
-        <p>Live location sharing, a safe-route suggestion, quick camera access, and background video recording, all from one panel.</p>
-      </div>
-      <div class="feature-card">
-        <div class="ficon">☎</div>
-        <h3>Emergency contacts</h3>
-        <p>Police, Women's Helpline, Child Helpline, and Ambulance numbers pre-loaded, plus two personal emergency contacts per user.</p>
-      </div>
-      <div class="feature-card">
-        <div class="ficon">⚖</div>
-        <h3>Know your rights</h3>
-        <p>A plain-language summary of key Indian laws for women's safety — IPC sections explained without legal jargon.</p>
-      </div>
-      <div class="feature-card">
-        <div class="ficon">🛡</div>
-        <h3>Self-defense guide</h3>
-        <p>Practical guidance a user can review ahead of time, not something they have to search for in the moment.</p>
-      </div>
-      <div class="feature-card">
-        <div class="ficon">👤</div>
-        <h3>Simple profile & auth</h3>
-        <p>Straightforward registration and login backed by a PHP + MySQL API, with a clean profile view of saved details.</p>
-      </div>
-    </div>
-  </div>
+
 </section>
+
+
+<!-- =====================================================
+     SCREENSHOTS
+===================================================== -->
 
 <section class="gallery-section" id="screens">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="section-label">Walkthrough</p>
-      <h2 class="section-title">Every screen, in order</h2>
-      <p class="section-body">Scroll through the actual app — from first launch to registering, logging in, and reaching the SOS panel.</p>
+
+    <div class="wrap">
+
+        <div class="section-head">
+
+            <p class="section-label">
+                App Screens
+            </p>
+
+            <h2 class="section-title">
+                Explore the Stay Secure application
+            </h2>
+
+            <p class="section-body">
+                A visual walkthrough of the main screens of the
+                Stay Secure women's safety application.
+                Click any screen to view it in a larger preview.
+            </p>
+
+        </div>
+
+
+        <div class="gallery-strip">
+
+
+            <div
+                class="gitem"
+                tabindex="0"
+                data-image="screenshots/01-home-safe.png"
+            >
+
+                <div class="frame">
+
+                    <img
+                        src="screenshots/01-home-safe.png"
+                        alt="Stay Secure Home Screen"
+                    >
+
+                </div>
+
+                <p class="cap">
+                    Home — Safety Status
+                </p>
+
+            </div>
+
+
+            <div
+                class="gitem"
+                tabindex="0"
+                data-image="screenshots/03-login.png"
+            >
+
+                <div class="frame">
+
+                    <img
+                        src="screenshots/03-login.png"
+                        alt="Stay Secure Login Screen"
+                    >
+
+                </div>
+
+                <p class="cap">
+                    Login
+                </p>
+
+            </div>
+
+
+            <div
+                class="gitem"
+                tabindex="0"
+                data-image="screenshots/02-register-1.png"
+            >
+
+                <div class="frame">
+
+                    <img
+                        src="screenshots/02-register-1.png"
+                        alt="Stay Secure Registration Screen"
+                    >
+
+                </div>
+
+                <p class="cap">
+                    Register — Details
+                </p>
+
+            </div>
+
+
+            <div
+                class="gitem"
+                tabindex="0"
+                data-image="screenshots/08-register-2.png"
+            >
+
+                <div class="frame">
+
+                    <img
+                        src="screenshots/08-register-2.png"
+                        alt="Stay Secure Emergency Contact Registration"
+                    >
+
+                </div>
+
+                <p class="cap">
+                    Register — Contacts
+                </p>
+
+            </div>
+
+
+            <div
+                class="gitem"
+                tabindex="0"
+                data-image="screenshots/04-menu-drawer.png"
+            >
+
+                <div class="frame">
+
+                    <img
+                        src="screenshots/04-menu-drawer.png"
+                        alt="Stay Secure Menu"
+                    >
+
+                </div>
+
+                <p class="cap">
+                    Menu
+                </p>
+
+            </div>
+
+
+            <div
+                class="gitem"
+                tabindex="0"
+                data-image="screenshots/05-profile.png"
+            >
+
+                <div class="frame">
+
+                    <img
+                        src="screenshots/05-profile.png"
+                        alt="Stay Secure Profile Screen"
+                    >
+
+                </div>
+
+                <p class="cap">
+                    Profile
+                </p>
+
+            </div>
+
+
+            <div
+                class="gitem"
+                tabindex="0"
+                data-image="screenshots/06-emergency-contacts.png"
+            >
+
+                <div class="frame">
+
+                    <img
+                        src="screenshots/06-emergency-contacts.png"
+                        alt="Stay Secure Emergency Contacts"
+                    >
+
+                </div>
+
+                <p class="cap">
+                    Emergency Contacts
+                </p>
+
+            </div>
+
+
+            <div
+                class="gitem"
+                tabindex="0"
+                data-image="screenshots/07-women-laws.png"
+            >
+
+                <div class="frame">
+
+                    <img
+                        src="screenshots/07-women-laws.png"
+                        alt="Stay Secure Women's Safety Laws"
+                    >
+
+                </div>
+
+                <p class="cap">
+                    Safety Awareness
+                </p>
+
+            </div>
+
+
+            <div
+                class="gitem"
+                tabindex="0"
+                data-image="screenshots/09-sos-features.png"
+            >
+
+                <div class="frame">
+
+                    <img
+                        src="screenshots/09-sos-features.png"
+                        alt="Stay Secure SOS Features"
+                    >
+
+                </div>
+
+                <p class="cap">
+                    SOS Features
+                </p>
+
+            </div>
+
+
+        </div>
+
     </div>
-    <div class="gallery-strip">
-      <div class="gitem">
-        <div class="frame"><img src="screenshots/01-home-safe.png" alt="Home screen, SAFE status"></div>
-        <p class="cap">Home — status</p>
-      </div>
-      <div class="gitem">
-        <div class="frame"><img src="screenshots/03-login.png" alt="Login screen"></div>
-        <p class="cap">Login</p>
-      </div>
-      <div class="gitem">
-        <div class="frame"><img src="screenshots/02-register-1.png" alt="Registration form part one"></div>
-        <p class="cap">Register — details</p>
-      </div>
-      <div class="gitem">
-        <div class="frame"><img src="screenshots/08-register-2.png" alt="Registration form part two with emergency contacts"></div>
-        <p class="cap">Register — contacts</p>
-      </div>
-      <div class="gitem">
-        <div class="frame"><img src="screenshots/04-menu-drawer.png" alt="Navigation drawer menu"></div>
-        <p class="cap">Menu</p>
-      </div>
-      <div class="gitem">
-        <div class="frame"><img src="screenshots/05-profile.png" alt="User profile screen"></div>
-        <p class="cap">Profile</p>
-      </div>
-      <div class="gitem">
-        <div class="frame"><img src="screenshots/06-emergency-contacts.png" alt="Emergency contacts list"></div>
-        <p class="cap">Emergency contacts</p>
-      </div>
-      <div class="gitem">
-        <div class="frame"><img src="screenshots/07-women-laws.png" alt="Women's safety laws reference screen"></div>
-        <p class="cap">Know your rights</p>
-      </div>
-      <div class="gitem">
-        <div class="frame"><img src="screenshots/09-sos-features.png" alt="SOS features panel"></div>
-        <p class="cap">SOS panel</p>
-      </div>
-    </div>
-  </div>
+
 </section>
+
+
+<!-- =====================================================
+     TECH STACK
+===================================================== -->
 
 <section id="stack">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="section-label">Under the hood</p>
-      <h2 class="section-title">Tech stack</h2>
+
+    <div class="wrap">
+
+        <div class="section-head">
+
+            <p class="section-label">
+                Technology
+            </p>
+
+            <h2 class="section-title">
+                Built with a practical mobile stack
+            </h2>
+
+        </div>
+
+
+        <div class="stack-row">
+
+            <span class="chip">
+                Flutter
+            </span>
+
+            <span class="chip">
+                Dart
+            </span>
+
+            <span class="chip">
+                PHP
+            </span>
+
+            <span class="chip">
+                MySQL
+            </span>
+
+            <span class="chip">
+                Geolocator
+            </span>
+
+            <span class="chip">
+                URL Launcher
+            </span>
+
+            <span class="chip">
+                Provider
+            </span>
+
+            <span class="chip">
+                XAMPP
+            </span>
+
+        </div>
+
     </div>
-    <div class="stack-row">
-      <span class="chip">Flutter / Dart</span>
-      <span class="chip">PHP REST APIs</span>
-      <span class="chip">MySQL</span>
-      <span class="chip">geolocator</span>
-      <span class="chip">url_launcher</span>
-      <span class="chip">shared_preferences</span>
-      <span class="chip">permission_handler</span>
-      <span class="chip">XAMPP</span>
-    </div>
-  </div>
+
 </section>
+
+
+<!-- =====================================================
+     RESEARCH
+===================================================== -->
 
 <section id="research">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="section-label">Published work</p>
-      <h2 class="section-title">This project is backed by a research paper</h2>
+
+    <div class="wrap">
+
+        <div class="section-head">
+
+            <p class="section-label">
+                Published Work
+            </p>
+
+            <h2 class="section-title">
+                Research behind the project
+            </h2>
+
+        </div>
+
+
+        <div class="research-card">
+
+            <p>
+                Stay Secure was documented as a research paper
+                covering the design and development of a women's
+                safety Android application.
+            </p>
+
+            <p class="meta">
+                Journal of Multidisciplinary Research & Review
+                (JMRR) · ISSN 2708-9452 · Volume 6, Issue 2 ·
+                April 2025
+            </p>
+
+        </div>
+
     </div>
-    <div class="research-card">
-      <p>Stay Secure was documented as a peer-reviewed research paper, covering the app's design rationale and its approach to women's safety technology.</p>
-      <p class="meta">Journal of Multidisciplinary Research & Review (JMRR) · ISSN 2708-9452 · Volume 6, Issue 2 · April 2025</p>
-    </div>
-  </div>
+
 </section>
 
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
-  <div class="wrap">
-    <div class="foot-row">
-      <span class="brand-line">Stay Secure</span>
-      <div class="foot-links">
-        <a href="https://github.com/DHARANISIVARAMAKRISHNAN/stay-secure" target="_blank" rel="noopener">GitHub Repo</a>
-        <a href="index.html">← Back to Portfolio</a>
-      </div>
+
+    <div class="wrap">
+
+        <div class="foot-row">
+
+            <span class="brand-line">
+                Stay Secure
+            </span>
+
+
+            <div class="foot-links">
+
+                <a
+                    href="https://github.com/DHARANISIVARAMAKRISHNAN/stay-secure"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    GitHub Repository
+                </a>
+
+                <a href="index.html">
+                    ← Back to Portfolio
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <p class="copy">
+            Built by Dharani S — Flutter & Android Developer.
+        </p>
+
     </div>
-    <p class="copy">Built by Dharani S — Flutter & Android Developer.</p>
-  </div>
+
 </footer>
+
+
+<!-- =====================================================
+     LIGHTBOX
+===================================================== -->
+
+<div
+    class="lightbox"
+    id="lightbox"
+    aria-hidden="true"
+>
+
+    <div class="lightbox-content">
+
+        <button
+            class="lightbox-close"
+            id="lightboxClose"
+            aria-label="Close image"
+        >
+            ×
+        </button>
+
+        <img
+            id="lightboxImage"
+            src=""
+            alt="Stay Secure App Screenshot"
+        >
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+const galleryItems =
+    document.querySelectorAll(".gitem");
+
+const lightbox =
+    document.getElementById("lightbox");
+
+const lightboxImage =
+    document.getElementById("lightboxImage");
+
+const lightboxClose =
+    document.getElementById("lightboxClose");
+
+
+/* Open screenshot */
+
+galleryItems.forEach(function(item) {
+
+    function openImage() {
+
+        const image =
+            item.getAttribute("data-image");
+
+        lightboxImage.src = image;
+
+        lightbox.classList.add("show");
+
+        lightbox.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        document.body.style.overflow = "hidden";
+    }
+
+
+    item.addEventListener(
+        "click",
+        openImage
+    );
+
+
+    item.addEventListener(
+        "keydown",
+        function(event) {
+
+            if (
+                event.key === "Enter" ||
+                event.key === " "
+            ) {
+
+                event.preventDefault();
+
+                openImage();
+
+            }
+
+        }
+    );
+
+});
+
+
+/* Close */
+
+function closeLightbox() {
+
+    lightbox.classList.remove("show");
+
+    lightbox.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+    document.body.style.overflow = "";
+
+    lightboxImage.src = "";
+}
+
+
+lightboxClose.addEventListener(
+    "click",
+    closeLightbox
+);
+
+
+/* Close when clicking outside */
+
+lightbox.addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target === lightbox
+        ) {
+
+            closeLightbox();
+
+        }
+
+    }
+);
+
+
+/* Close with Escape */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Escape" &&
+            lightbox.classList.contains("show")
+        ) {
+
+            closeLightbox();
+
+        }
+
+    }
+);
+
+</script>
 
 </body>
 </html>
+```
